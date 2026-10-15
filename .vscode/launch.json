@@ -1,0 +1,56 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "GGI1: Debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/active/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "GGI1: Build active file",
+            "setupCommands": [
+                {"text": "-enable-pretty-printing", "ignoreFailures": true},
+                {"text": "-gdb-set debuginfod enabled off", "ignoreFailures": true}
+            ]
+        },
+        {
+            "name": "GGI1: Debug C example",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/fahrenheit-c",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "GGI1: Build examples",
+            "setupCommands": [
+                {"text": "-enable-pretty-printing", "ignoreFailures": true},
+                {"text": "-gdb-set debuginfod enabled off", "ignoreFailures": true}
+            ]
+        },
+        {
+            "name": "GGI1: Debug C++ example",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/fahrenheit-cpp",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "GGI1: Build examples",
+            "setupCommands": [
+                {"text": "-enable-pretty-printing", "ignoreFailures": true},
+                {"text": "-gdb-set debuginfod enabled off", "ignoreFailures": true}
+            ]
+        }
+    ]
+}

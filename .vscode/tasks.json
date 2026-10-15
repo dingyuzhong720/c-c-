@@ -1,0 +1,130 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "GGI1: Build active file",
+            "type": "process",
+            "command": "/bin/bash",
+            "args": [
+                "${workspaceFolder}/scripts/build-file.sh",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "GGI1: Run active file",
+            "type": "process",
+            "command": "/bin/bash",
+            "args": [
+                "${workspaceFolder}/scripts/build-file.sh",
+                "${file}",
+                "run"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "GGI1: Build examples",
+            "type": "process",
+            "command": "/usr/bin/make",
+            "args": [
+                "--no-print-directory",
+                "all"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "GGI1: Run C example",
+            "type": "process",
+            "command": "${workspaceFolder}/build/fahrenheit-c",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "GGI1: Build examples",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "GGI1: Run C++ example",
+            "type": "process",
+            "command": "${workspaceFolder}/build/fahrenheit-cpp",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "GGI1: Build examples",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "GGI1: Verify examples",
+            "type": "process",
+            "command": "/usr/bin/make",
+            "args": [
+                "--no-print-directory",
+                "check"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "test"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc Aktive Datei kompilieren",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Vom Debugger generierte Aufgabe."
+        }
+    ]
+}

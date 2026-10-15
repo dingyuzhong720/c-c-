@@ -1,0 +1,9 @@
+{
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "task.saveBeforeRun": "always",
+    "debug.onTaskErrors": "abort",
+    "cmake.buildDirectory": "${workspaceFolder}/build/cmake"
+}

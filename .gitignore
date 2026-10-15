@@ -1,0 +1,12 @@
+/build/
+*.o
+
+# Generated build and editor files
+*.out
+*.exe
+*.a
+*.so
+*.swp
+*.swo
+*~
+.DS_Store
