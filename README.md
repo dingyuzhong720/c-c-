@@ -112,3 +112,6 @@ cmake --build build/cmake --parallel 2
 服务器端已实际完成 C11/C++17 编译、温度转换、非法输入、GDB 断点/单步/变量、GDB MI、当前文件任务命令以及 CMake 构建验证。原始日志在 `build/verification.log`，部署结果见 `DEPLOYMENT_REPORT.md`。
 
 朋友电脑上的 OpenSSH 配置、私钥可用性、Remote-SSH 首次下载、远程扩展安装、VS Code 图形界面中的 F5 和变量面板仍需按本指南在该电脑验证。服务器端测试不能替代这些客户端操作。
+
+
+本目录已关联私有仓库 [dingyuzhong720/c-c-](https://github.com/dingyuzhong720/c-c-)；保存后的源码约每 15 秒自动提交上传，详见 [自动上传说明](AUTO_SYNC.md)。
